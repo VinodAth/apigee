@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="32" name="Dash-API-demo">
+    <Basepaths>/DashAPI</Basepaths>
+    <Basepaths>/DashAPI</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1555646296703</CreatedAt>
+    <CreatedBy>vinod.athiyarath@realogy.com</CreatedBy>
+    <Description>Dash API 6</Description>
+    <DisplayName>Dash-API-demo</DisplayName>
+    <LastModifiedAt>1555646296703</LastModifiedAt>
+    <LastModifiedBy>vinod.athiyarath@realogy.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:1162a24417b694f2c134fb7c7b69303fdb76b6a5ffa43e950b6a3a1d269e254e277b40fe74f4dadea3445eaa374d8d0c1950bc3e36215c4814a5beb3a152b7b2:us-east-1</ManifestVersion>
+    <Policies/>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
