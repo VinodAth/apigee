@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TargetEndpoint name="default">
-    <Description>SecuritySRVRs2</Description>
+    <Description>Dash API-V2</Description>
     <FaultRules/>
     <Flows/>
     <PostFlow name="PostFlow">
@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://stg.api.realogyfg.com</URL>
+        <URL>https://stg.api.realogyfg.com/dashapi</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
