@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <Description>Dash API-V2</Description>
+    <Description>Dash API-V3</Description>
     <FaultRules/>
     <Flows>
         <Flow name="Batches_Post">
@@ -391,7 +391,7 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/Dash-APIV2-10</BasePath>
+        <BasePath>/Dash-APIV3-10</BasePath>
         <Properties/>
         <VirtualHost>default</VirtualHost>
         <VirtualHost>secure</VirtualHost>
