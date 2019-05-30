@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TargetEndpoint name="default">
-    <Description>Dash API-V2</Description>
+    <Description>Swagger Petstore</Description>
     <FaultRules/>
     <Flows/>
     <PostFlow name="PostFlow">
@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://stg.api.realogyfg.com/dashapi</URL>
+        <URL>https://petstore.swagger.io/v2</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
