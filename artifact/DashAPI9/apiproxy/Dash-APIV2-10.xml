@@ -8,7 +8,7 @@
     <DisplayName>Dash-APIV2-10</DisplayName>
     <LastModifiedAt>1559226995997</LastModifiedAt>
     <LastModifiedBy>APIM_ADMIN@realogy.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:5089f0168e05c0678d8fb108c83d3d30ef9d02edfab9444f48d9f3683d2712796c66e1c0b4046c9dee40d58b43abc59f27678b7675bbc8323060ef7eac76008b</ManifestVersion>
+    <ManifestVersion>SHA-512:f0b97c7d11fb5c491668c6929d2fd26426e07b086dbc948a5ed9aea9e9aa4407edb9605bbdf5b3ae7c343a1cbca22c82b781ac84a617f2cbd31963054deaf8d0:us-east-1</ManifestVersion>
     <Policies/>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>
