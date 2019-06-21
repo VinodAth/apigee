@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TargetEndpoint name="default">
-    <Description>Dash API-V3</Description>
+    <Description>DataSyncGtest</Description>
     <FaultRules/>
     <Flows/>
     <PostFlow name="PostFlow">
@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://stg.api.realogyfg.com/dashapi</URL>
+        <URL>https://stg.api.realogyfg.com/v2/xxx/Datasyncapiqa2</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
