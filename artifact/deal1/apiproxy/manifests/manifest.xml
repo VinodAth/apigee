@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest name="manifest">
-    <Policies/>
-    <ProxyEndpoints/>
+    <Policies>
+        <VersionInfo resourceName="FC-JWT" version="SHA-512:3efdbff8c0aeeb92f2264682a049636d1d7b0f933fd28f96e9cdc29ec3ec45c36f9fe69ef5efd6dfade535dc85b42bff8655440c38c0a24d37f5d147a9ff15d9"/>
+        <VersionInfo resourceName="FC-SpikeArrest" version="SHA-512:a6fc77359165cf131ba655818ff51a93f4a00ee5716fb560960c9e4d1df574a5112cc07335ad6f33478c4596858fd60da78bd7c266db52599a1e430b5e9cef72"/>
+        <VersionInfo resourceName="VK-VerifyApiKey" version="SHA-512:36108f38403f78398248f4779081fe994a73585a825852666d449a3c5bb3d8a17a8bb34d49573de593d09db38029a4f11bb45abd322b2a25a57b215981f66b62"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:9277d48bccf78dfd82a5008b274e6b3aa2bc617a7b4e824190b4ca5b6719d3b88b28c0a12f297eed8499aa80df7b4d44ef08dfd4b43e0742460d10dda4035efe"/>
+    </ProxyEndpoints>
     <Resources/>
     <SharedFlows/>
-    <TargetEndpoints/>
+    <TargetEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:e3c97b59d7b984d185aa6b1cb497438871c5ca19d95ea28777441698bf92bdcf747dbd05e89e012f218beb29c496d1017ca47f339810400983e8d5191e9dc618"/>
+    </TargetEndpoints>
 </Manifest>

@@ -22,13 +22,13 @@
             <Condition>(proxy.pathsuffix MatchesPath "/api/v{version}/FDStagedTransaction") and (request.verb = "POST")</Condition>
         </Flow>
         <Flow name="ApiV{versionFDStagedTransactionByTranIdentKeyPut">
-            <Description></Description>
+            <Description/>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/api/v{version}/FDStagedTransaction/{TranIdentKey}") and (request.verb = "PUT")</Condition>
         </Flow>
         <Flow name="ApiV{versionFDStagedTransactionByTranIdentKeyDelete">
-            <Description></Description>
+            <Description/>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/api/v{version}/FDStagedTransaction/{TranIdentKey}") and (request.verb = "DELETE")</Condition>
@@ -42,11 +42,7 @@
         <Request>
             <Step>
                 <FaultRules/>
-                <Name>FC-SpikeArrest</Name>
-            </Step>
-            <Step>
-                <FaultRules/>
-                <Name>FC-JWT</Name>
+                <Name>VK-VerifyApiKey</Name>
             </Step>
         </Request>
         <Response/>
