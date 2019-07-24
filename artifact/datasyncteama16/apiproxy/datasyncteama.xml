@@ -8,7 +8,7 @@
     <DisplayName>datasyncteama</DisplayName>
     <LastModifiedAt>1563960984304</LastModifiedAt>
     <LastModifiedBy>APIM_ADMIN@realogy.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:5089f0168e05c0678d8fb108c83d3d30ef9d02edfab9444f48d9f3683d2712796c66e1c0b4046c9dee40d58b43abc59f27678b7675bbc8323060ef7eac76008b</ManifestVersion>
+    <ManifestVersion>SHA-512:f90031494c394161a8893e3ee59a4bdbcbef32cb187a2896cdea1a8244d4b5d9831ba822b6a6a77e8a0c118c1765cfe8e0bf05a15ad828227e456fb7cb7fed4a:us-east-1</ManifestVersion>
     <Policies>
         <Policy>FC-JWT</Policy>
         <Policy>FC-SpikeArrest</Policy>
