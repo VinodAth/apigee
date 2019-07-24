@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="15" name="datasyncteama">
+    <Basepaths>/v3.0/datasyncteama</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1563959841113</CreatedAt>
+    <CreatedBy>APIM_ADMIN@realogy.com</CreatedBy>
+    <Description>DataSyncGtest</Description>
+    <DisplayName>datasyncteama</DisplayName>
+    <LastModifiedAt>1563959841113</LastModifiedAt>
+    <LastModifiedBy>APIM_ADMIN@realogy.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:5089f0168e05c0678d8fb108c83d3d30ef9d02edfab9444f48d9f3683d2712796c66e1c0b4046c9dee40d58b43abc59f27678b7675bbc8323060ef7eac76008b</ManifestVersion>
+    <Policies>
+        <Policy>FC-JWT</Policy>
+        <Policy>FC-SpikeArrest</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
