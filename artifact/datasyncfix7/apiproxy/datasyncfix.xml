@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="7" name="datasyncfix">
+    <Basepaths>/v2.0/datasyncfix</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1564454565619</CreatedAt>
+    <CreatedBy>APIM_ADMIN@realogy.com</CreatedBy>
+    <Description>DataSyncGtest</Description>
+    <DisplayName>datasyncfix</DisplayName>
+    <LastModifiedAt>1564454565619</LastModifiedAt>
+    <LastModifiedBy>APIM_ADMIN@realogy.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:c6d0f4263bfe4067c578b9b24e6d2597f7f9e7303ece988ed3ef6f4220823b4710b8c5da7744ab40547f53dad34e02f9a7b66e491d8b4f253a927d2387ca91d6:us-east-1</ManifestVersion>
+    <Policies>
+        <Policy>FC-JWT</Policy>
+        <Policy>FC-SpikeArrest</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
