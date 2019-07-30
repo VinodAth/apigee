@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest name="manifest">
-    <Policies>
-        <VersionInfo resourceName="FC-JWT" version="SHA-512:3efdbff8c0aeeb92f2264682a049636d1d7b0f933fd28f96e9cdc29ec3ec45c36f9fe69ef5efd6dfade535dc85b42bff8655440c38c0a24d37f5d147a9ff15d9"/>
-        <VersionInfo resourceName="FC-SpikeArrest" version="SHA-512:a6fc77359165cf131ba655818ff51a93f4a00ee5716fb560960c9e4d1df574a5112cc07335ad6f33478c4596858fd60da78bd7c266db52599a1e430b5e9cef72"/>
-    </Policies>
-    <ProxyEndpoints>
-        <VersionInfo resourceName="default" version="SHA-512:f30288c53a6d062cd69dfa4b598ffee5bb8152bcc52ea0b3b5d947330e87c8c0b443425f249270c0446b19c2aaf3b3fa58cd500a89abbb426cfa4e666df304e0"/>
-    </ProxyEndpoints>
+    <Policies/>
+    <ProxyEndpoints/>
     <Resources/>
     <SharedFlows/>
-    <TargetEndpoints>
-        <VersionInfo resourceName="default" version="SHA-512:106012a9e32e32242ab781e3a0cc035a3db8df87c7a80ba984d0befb98c3c1c44127aea6ddfd930a1038dc8c797a2055452ada4dbc4e1feed13d0e497d13ca94"/>
-    </TargetEndpoints>
+    <TargetEndpoints/>
 </Manifest>
