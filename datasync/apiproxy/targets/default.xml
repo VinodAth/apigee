@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://stg.api.realogyfg.com/abc/xxx/datasyncapi</URL>
+        <URL>https://stg.api.realogyfg.com/datasync</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
