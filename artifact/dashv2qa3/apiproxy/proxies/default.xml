@@ -24,7 +24,7 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/v1.1/dashv2qa</BasePath>
+        <BasePath>/v1/dashv2qa</BasePath>
         <Properties/>
         <VirtualHost>default</VirtualHost>
         <VirtualHost>secure</VirtualHost>
