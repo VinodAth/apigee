@@ -20,6 +20,10 @@
                 <FaultRules/>
                 <Name>FC-SpikeArrest</Name>
             </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
         </Request>
         <Response/>
     </PreFlow>
