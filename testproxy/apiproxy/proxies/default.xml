@@ -106,11 +106,11 @@
             </Step>
             <Step>
                 <FaultRules/>
-                <Name>FC-JWT</Name>
+                <Name>VK-VerifyAPIKey</Name>
             </Step>
             <Step>
                 <FaultRules/>
-                <Name>VK-VerifyAPIKey</Name>
+                <Name>FC-JWT</Name>
             </Step>
         </Request>
         <Response/>
