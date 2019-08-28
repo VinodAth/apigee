@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TargetEndpoint name="default">
-    <Description>NRT Deal - API</Description>
+    <Description>deal</Description>
     <FaultRules/>
     <Flows/>
     <PostFlow name="PostFlow">
@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://nrtapi.realogy.com/DEV03/Deal</URL>
+        <URL>https://sandbox.api.realogy.com/v0/deal</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
