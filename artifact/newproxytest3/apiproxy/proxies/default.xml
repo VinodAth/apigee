@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>DataSyncGtest</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="getagentdelta">
+            <Description>GetAgentDelta</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/agents/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getactiveagents">
+            <Description>GetActiveAgents</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/agents/active") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getagentbyid">
+            <Description>GetAgentById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/agents/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getcompanydelta">
+            <Description>GetCompanyDelta</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getactivecompanies">
+            <Description>GetActiveCompanies</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies/active") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getcompanybyid">
+            <Description>GetCompanyById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getlistingdelta">
+            <Description>GetListingDelta</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getactivelistings">
+            <Description>GetActiveListings</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/active") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getlistingbyid">
+            <Description>GetListingById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getofficedelta">
+            <Description>GetOfficeDelta</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getactiveoffices">
+            <Description>GetActiveOffices</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices/active") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getofficebyid">
+            <Description>GetOfficeById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getteamdelta">
+            <Description>GetTeamDelta</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/teams/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getactiveteams">
+            <Description>GetActiveTeams</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/teams/active") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getteambyid">
+            <Description>GetTeamById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/teams/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v2.0/newproxytest</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
