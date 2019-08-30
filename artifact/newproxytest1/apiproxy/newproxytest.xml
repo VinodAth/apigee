@@ -2,14 +2,17 @@
 <APIProxy revision="1" name="newproxytest">
     <Basepaths>/v2.0/newproxytest</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1565597261425</CreatedAt>
+    <CreatedAt>1567164654266</CreatedAt>
     <CreatedBy>APIM_ADMIN@realogy.com</CreatedBy>
     <Description>DataSyncGtest</Description>
     <DisplayName>newproxytest</DisplayName>
-    <LastModifiedAt>1565597261425</LastModifiedAt>
+    <LastModifiedAt>1567164654266</LastModifiedAt>
     <LastModifiedBy>APIM_ADMIN@realogy.com</LastModifiedBy>
     <ManifestVersion>SHA-512:5089f0168e05c0678d8fb108c83d3d30ef9d02edfab9444f48d9f3683d2712796c66e1c0b4046c9dee40d58b43abc59f27678b7675bbc8323060ef7eac76008b</ManifestVersion>
     <Policies>
+        <Policy>FC-APIKey</Policy>
+        <Policy>FC-JWT</Policy>
+        <Policy>FC-MessageLogger</Policy>
         <Policy>FC-SpikeArrest</Policy>
     </Policies>
     <ProxyEndpoints>
