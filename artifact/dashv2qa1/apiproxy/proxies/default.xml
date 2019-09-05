@@ -12,13 +12,22 @@
     </Flows>
     <PostFlow name="PostFlow">
         <Request/>
-        <Response/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
     </PostFlow>
     <PreFlow name="PreFlow">
         <Request>
             <Step>
                 <FaultRules/>
                 <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
             </Step>
             <Step>
                 <FaultRules/>
