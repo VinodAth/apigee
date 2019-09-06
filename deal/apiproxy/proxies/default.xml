@@ -1,48 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <Description>deal</Description>
+    <Description>NRT Deal - API</Description>
     <FaultRules/>
     <Flows>
-        <Flow name="ApiV{versionDealPost">
-            <Description>HomeBase endpoint for creating a new Trident deal</Description>
-            <Request/>
-            <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/api/v{version}/Deal") and (request.verb = "POST")</Condition>
-        </Flow>
-        <Flow name="ApiV{versionDealPut">
+        <Flow name="Deal_PUT">
             <Description>HomeBase endpoint for updating an existing Trident deal</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/api/v{version}/Deal") and (request.verb = "PUT")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/api/v{version}/deal") and (request.verb = "PUT")</Condition>
         </Flow>
-        <Flow name="ApiV{versionFDStagedTransactionPost">
-            <Description>Creates first data staging transaction record</Description>
+        <Flow name="Deal_POST">
+            <Description>HomeBase endpoint for creating a new Trident deal</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/api/v{version}/FDStagedTransaction") and (request.verb = "POST")</Condition>
-        </Flow>
-        <Flow name="ApiV{versionFDStagedTransactionByTranIdentKeyPut">
-            <Description></Description>
-            <Request/>
-            <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/api/v{version}/FDStagedTransaction/{TranIdentKey}") and (request.verb = "PUT")</Condition>
-        </Flow>
-        <Flow name="ApiV{versionFDStagedTransactionByTranIdentKeyDelete">
-            <Description></Description>
-            <Request/>
-            <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/api/v{version}/FDStagedTransaction/{TranIdentKey}") and (request.verb = "DELETE")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/api/v{version}/deal") and (request.verb = "POST")</Condition>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">
         <Request/>
-        <Response/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
     </PostFlow>
     <PreFlow name="PreFlow">
         <Request>
             <Step>
                 <FaultRules/>
                 <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
             </Step>
             <Step>
                 <FaultRules/>
