@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>Search</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="getofficebyid">
+            <Description>GetOfficeById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices/{officeId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getagentbyid">
+            <Description>GetAgentById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/agents/{agentId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetListings">
+            <Description>GetListings</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetListingsPost">
+            <Description>GetListingsPost</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="GetListingById">
+            <Description>GetListingById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/{listingId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetListingsDynamic">
+            <Description>GetListingsDynamic</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/dynamic") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="SuggestListingsAsync">
+            <Description>SuggestListingsAsync</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/suggest") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="SuggestListingsPostAsync">
+            <Description>SuggestListingsPostAsync</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/suggest") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="GetOffices">
+            <Description>GetOffices</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetAgents">
+            <Description>GetAgents</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/agents") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetCompanies">
+            <Description>GetCompanies</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetCompanyById">
+            <Description>GetCompanyById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies/{companyId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetTeams">
+            <Description>GetTeams</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/teams") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetTeamById">
+            <Description>GetTeamById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/teams/{teamId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetLocations">
+            <Description>GetLocations</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/geographies") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0/search</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
