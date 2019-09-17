@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>CorporateStaff</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="GetCorporateStaffDelta">
+            <Description>GetCorporateStaffDelta</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/corporatestaff/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetActiveCorporateStaff">
+            <Description>GetActiveCorporateStaff</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/corporateStaff/active") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetCorporateStaffById">
+            <Description>GetCorporateStaffById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/corporatestaff/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0/corporatestaff</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
