@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>analytics</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="GetMetricsMetadata">
+            <Description>Get metric definitions</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/metrics/metadata/{resource}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetAgentMetrics">
+            <Description>Get Agent metrics</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/agents/{id}/metrics") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetCompanyMetrics">
+            <Description>Get Company metrics</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies/{id}/metrics") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetListingMetrics">
+            <Description>Get Listing metrics</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/{id}/metrics") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetOfficeMetrics">
+            <Description>Get Office metrics</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/office/{id}/metrics") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetTeamMetrics">
+            <Description>Get Team metrics</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/team/{id}/metrics") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetListingMetricsByDay">
+            <Description>Get Listing metrics by day</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/metrics") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetAgentMetricsByDay">
+            <Description>Get Agent metrics by day</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/agents/metrics") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0/analytics</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
