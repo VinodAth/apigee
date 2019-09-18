@@ -1,1 +1,1 @@
-Staging_CorporateStaff_swagger
+Staging_corporateStaff_swagger
