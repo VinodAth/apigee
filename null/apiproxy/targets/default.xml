@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TargetEndpoint name="default">
-    <Description>Search (UnSecured)</Description>
+    <Description>Address normalization and standardization service</Description>
     <FaultRules/>
     <Flows/>
     <PostFlow name="PostFlow">
@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://poc-api-listing-rfgbtt-staging.azurewebsites.netundefined</URL>
+        <URL>http://realogy-mls-address-service.eapdesb2.realogydev.comundefined</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
