@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>Address normalization and standardization service</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="AddAddress">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/api/internal/v1/address") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="AddAddressFromLegacy">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/api/internal/v1/legacyaddress") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="ViewAddressByAddressId">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/v1/address/addressid/{addressId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ViewAddressByLegacyAddressId">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/api/v1/address/legacyid/{legacyAddressId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ViewAddressByRealogyId">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/api/v1/address/realogyid/{realogyId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ViewAddress">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/api/v1/address/{address}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ViewGeoCoordinateByAddress">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/api/v1/geocoordinate/{address}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="HealthCheck">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/internal/health") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/vv01/mlsaddress</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
