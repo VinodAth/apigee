@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>transactions</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="GetBuyerSellerTransactionById">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/GetBuyerSellerTransactionById/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetOtherIncomeTransactionById">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/GetOtherIncomeTransactionById/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetSaleTransactionById">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/GetSaleTransactionById/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetTransactionDelta">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetBuyerSellerTransactionSearch">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/buyersellertransactions") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetTransactions">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0/transactions</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
