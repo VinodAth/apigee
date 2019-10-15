@@ -53,15 +53,15 @@
         <Request>
             <Step>
                 <FaultRules/>
-                <Name>FC-ExtractParameters</Name>
+                <Name>FC-SpikeArrest</Name>
             </Step>
             <Step>
                 <FaultRules/>
-                <Name>FC-ExtractParameters</Name>
+                <Name>FC-APIKey</Name>
             </Step>
             <Step>
                 <FaultRules/>
-                <Name>FC-ExtractParameters</Name>
+                <Name>FC-JWT</Name>
             </Step>
             <Step>
                 <FaultRules/>
