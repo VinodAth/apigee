@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>Reference/Data</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="GET /reference-data/geopolitical-location">
+            <Description>Geopolitical location data</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/reference-data/geopolitical-location") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GET /reference-data/geopolitical-location/{segment1}">
+            <Description>Geopolitical data with one segment of specificity</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/reference-data/geopolitical-location/{segment1}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GET /reference-data/geopolitical-location/{segment1}/{segment2}">
+            <Description>Geopolitical data with two segments of specificity</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/reference-data/geopolitical-location/{segment1}/{segment2}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GET /reference-data/geopolitical-location/{segment1}/{segment2}/{segment3}">
+            <Description>Geopolitical data with three segments of specificity</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/reference-data/geopolitical-location/{segment1}/{segment2}/{segment3}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GET /reference-data/geopolitical-location/{segment1}/{segment2}/{segment3}/{segment4}">
+            <Description>Geopolitical data with four segments of specificity</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/reference-data/geopolitical-location/{segment1}/{segment2}/{segment3}/{segment4}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GET /reference-data/geopolitical-location/{segment1}/{segment2}/{segment3}/{segment4}/{segment5}">
+            <Description>Fifth-level GeoPolitical data</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/reference-data/geopolitical-location/{segment1}/{segment2}/{segment3}/{segment4}/{segment5}") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-CommonConfig</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0.0/reference-data</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
