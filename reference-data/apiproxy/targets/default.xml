@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://localhost:3000/reference-data</URL>
+        <URL>https://localhost:3000/v1.0/reference-data</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>

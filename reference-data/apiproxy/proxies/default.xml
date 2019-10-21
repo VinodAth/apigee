@@ -75,7 +75,7 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/v1.0.0/reference-data</BasePath>
+        <BasePath>/v1.0/reference-data</BasePath>
         <Properties/>
         <VirtualHost>default</VirtualHost>
         <VirtualHost>secure</VirtualHost>
