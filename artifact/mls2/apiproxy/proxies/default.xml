@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>MLS Listings Service</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="HealthCheck">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/internal/health") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingsByCity">
+            <Description>Get Mls Listing By City Name</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/city/{city}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingsByPostalCode">
+            <Description>Get Mls Listing By Postal Code</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/postalcode/{postal_code}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingBySource">
+            <Description>Get Mls Listing service</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/source/{source_system_key}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingsByState">
+            <Description>Get Mls Listing By City Name</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/state/{state}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="StreamMlsListingByCity">
+            <Description>Stream Mls Listing service</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/stream/city/{city}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="StreamMlsListingEvents">
+            <Description>Get Mls Listing service</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/stream/event") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="StreamMlsListingByPostalCode">
+            <Description>Stream Mls Listing service</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/stream/postalcode/{postal_code}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="StreamMlsListingBySource">
+            <Description>Stream Mls Listing service</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/stream/source/{source_system_key}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="StreamMlsListingByState">
+            <Description>Stream Mls Listing service</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/stream/state/{state}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingByListingId">
+            <Description>Get Mls Listing service</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/{listing_id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingByListingId2">
+            <Description>Get Mls Listing service</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listing/{listing_id}/source/{source_system_key}") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-CommonConfig</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0/mls</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
