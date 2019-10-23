@@ -129,10 +129,9 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/v1.0/datasyncing1021</BasePath>
+        <BasePath>/v1.1/datasyncing1021</BasePath>
         <Properties/>
-        <VirtualHost>default</VirtualHost>
-        <VirtualHost>secure</VirtualHost>
+        <VirtualHost>realogy-secure</VirtualHost>
     </HTTPProxyConnection>
     <RouteRule name="default">
         <TargetEndpoint>default</TargetEndpoint>
