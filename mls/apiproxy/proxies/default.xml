@@ -4,76 +4,82 @@
     <FaultRules/>
     <Flows>
         <Flow name="HealthCheck">
-            <Description></Description>
+            <Description>Health check for the service</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/internal/health") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="GetMlsListingsByCity">
-            <Description>Get Mls Listing By City Name</Description>
+            <Description>Get Mls Listing By City</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/city/{city}") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/city/{city}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingsByCity2">
+            <Description>Get Mls Listing By City</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/city/{city}/state/{state}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingByListingId">
+            <Description>Get Mls Listing service by listing id</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/listing/{listing_id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingByListingId2">
+            <Description>Get Mls Listing service by listing id</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/listing/{listing_id}/source/{source_system_key}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="GetMlsListingsByPostalCode">
             <Description>Get Mls Listing By Postal Code</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/postalcode/{postal_code}") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/postalcode/{postal_code}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="GetMlsListingBySource">
-            <Description>Get Mls Listing service</Description>
+            <Description>Get Mls Listing by source system key</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/source/{source_system_key}") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/source/{source_system_key}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="GetMlsListingsByState">
-            <Description>Get Mls Listing By City Name</Description>
+            <Description>Get Mls Listing By State</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/state/{state}") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/state/{state}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingByCity">
-            <Description>Stream Mls Listing service</Description>
+            <Description>Stream Mls Listing service for city</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/stream/city/{city}") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/city/{city}") and (request.verb = "GET")</Condition>
         </Flow>
-        <Flow name="StreamMlsListingEvents">
-            <Description>Get Mls Listing service</Description>
+        <Flow name="StreamMlsListingEvent">
+            <Description>Mls Event Streaming Service</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/stream/event") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/event") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingByPostalCode">
-            <Description>Stream Mls Listing service</Description>
+            <Description>Stream Mls Listing service for postal code</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/stream/postalcode/{postal_code}") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/postalcode/{postal_code}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingBySource">
-            <Description>Stream Mls Listing service</Description>
+            <Description>Stream Mls Listing service for source system key</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/stream/source/{source_system_key}") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/source/{source_system_key}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingByState">
-            <Description>Stream Mls Listing service</Description>
+            <Description>Stream Mls Listing service for state</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/stream/state/{state}") and (request.verb = "GET")</Condition>
-        </Flow>
-        <Flow name="GetMlsListingByListingId">
-            <Description>Get Mls Listing service</Description>
-            <Request/>
-            <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/{listing_id}") and (request.verb = "GET")</Condition>
-        </Flow>
-        <Flow name="GetMlsListingByListingId2">
-            <Description>Get Mls Listing service</Description>
-            <Request/>
-            <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/listing/{listing_id}/source/{source_system_key}") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/state/{state}") and (request.verb = "GET")</Condition>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">
@@ -113,8 +119,7 @@
     <HTTPProxyConnection>
         <BasePath>/v1.0/mls</BasePath>
         <Properties/>
-        <VirtualHost>default</VirtualHost>
-        <VirtualHost>secure</VirtualHost>
+        <VirtualHost>realogy-secure</VirtualHost>
     </HTTPProxyConnection>
     <RouteRule name="default">
         <TargetEndpoint>default</TargetEndpoint>
