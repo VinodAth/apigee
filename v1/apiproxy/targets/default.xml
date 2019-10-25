@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TargetEndpoint name="default">
-    <Description>Reference/Data</Description>
+    <Description>MDM Company</Description>
     <FaultRules/>
     <Flows/>
     <PostFlow name="PostFlow">
@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>http://localhost:3000/api/v1</URL>
+        <URL>https://companyervices.eapdesb3.realogydev.com:8083/mdm/api/v1</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
