@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>Security</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="GetIdentities">
+            <Description>GetIdentities</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/identities/{idpId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetIdentitiesBySubject">
+            <Description>GetIdentitiesBySubject</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/identities/{idpId}/{sub}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="PostIdentitiesBySubject">
+            <Description>PostIdentitiesBySubject</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/identities/{idpId}/{sub}") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="GetUsers">
+            <Description>GetUsers</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetUserById">
+            <Description>GetUserById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetUserBrands">
+            <Description>GetUserBrands</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/{id}/brands") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetUserMasterFranchises">
+            <Description>GetUserMasterFranchises</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/{id}/mfs") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetUserCompanies">
+            <Description>GetUserCompanies</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/{id}/companies") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetUserOffices">
+            <Description>GetUserOffices</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/{id}/offices") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetAppRoles">
+            <Description>GetAppRoles</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/{id}/appRoles") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetCoarseGrainedPermission">
+            <Description>GetCoarseGrainedPermission</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/authorizations/coarse/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetFineGrainedPermission">
+            <Description>GetFineGrainedPermission</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/authorizations/fine/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetOdataUsers">
+            <Description>GetOdataUsers</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/odata/Users") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ReserveUserDomainAddress">
+            <Description>ReserveUserDomainAddress</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/domainaddress/reserve") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="UpdateUserDomainAddress">
+            <Description>UpdateUserDomainAddress</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/domainaddress") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="GetUserApplications">
+            <Description>GetUserApplications</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/{id}/applications") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="PostApplicationAccesses">
+            <Description>PostApplicationAccesses</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/applicationaccesses") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="GetApplicationAccesses">
+            <Description>GetApplicationAccesses</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/applicationaccesses/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetRolesForApplication">
+            <Description>GetRolesForApplication</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/application/{application}/roles") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetApplicationRolesForIdentity">
+            <Description>GetApplicationRolesForIdentity</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/identities/{idpId}/{sub}/{application}/roles") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="UpdateApplicationRolesForIdentity">
+            <Description>UpdateApplicationRolesForIdentity</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/identities/{idpId}/{sub}/{application}/roles") and (request.verb = "PUT")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-CommonConfig</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0/security</BasePath>
+        <Properties/>
+        <VirtualHost>realogy-secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
