@@ -57,7 +57,7 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/v1./staffservice</BasePath>
+        <BasePath>/v1.0/staffservice</BasePath>
         <Properties/>
         <VirtualHost>realogy-secure</VirtualHost>
     </HTTPProxyConnection>
