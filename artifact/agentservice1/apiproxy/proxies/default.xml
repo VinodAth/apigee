@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <Description>MDM Agent2</Description>
+    <Description>MDM Agent</Description>
     <FaultRules/>
     <Flows>
         <Flow name="GET /agents/{agentMasterId}">
@@ -57,7 +57,7 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/v1./agentservice</BasePath>
+        <BasePath>/v1.0/agentservice</BasePath>
         <Properties/>
         <VirtualHost>realogy-secure</VirtualHost>
     </HTTPProxyConnection>
