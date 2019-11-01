@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <Description>MDM Staff Entity</Description>
+    <Description>MDM Staff Entity </Description>
     <FaultRules/>
     <Flows>
         <Flow name="GET /staff">
@@ -57,7 +57,7 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/v1./staffservice</BasePath>
+        <BasePath>/v1.0/staffservice</BasePath>
         <Properties/>
         <VirtualHost>realogy-secure</VirtualHost>
     </HTTPProxyConnection>
