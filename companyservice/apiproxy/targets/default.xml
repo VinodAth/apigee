@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TargetEndpoint name="default">
-    <Description>MDM Agent2</Description>
+    <Description>MDM Company </Description>
     <FaultRules/>
     <Flows/>
     <PostFlow name="PostFlow">
@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://eapagentservices.eapdesb3.realogydev.com/v1/api/companyservice</URL>
+        <URL>https://eapcompanyservices.eapdesb3.realogydev.com/v1/api/companyservice</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>

@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <Description>MDM Agent2</Description>
+    <Description>MDM Company </Description>
     <FaultRules/>
     <Flows>
-        <Flow name="GET /agents/{agentMasterId}">
-            <Description>Finds Agent by Agent MasterId</Description>
+        <Flow name="GetCompanyList">
+            <Description></Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/agents/{agentMasterId}") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies") and (request.verb = "GET")</Condition>
         </Flow>
-        <Flow name="GET /agents">
-            <Description>Fetches all agents with filters</Description>
+        <Flow name="GET /companies/changes">
+            <Description>Fetches the changes associated with the companies</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/agents") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies/changes") and (request.verb = "GET")</Condition>
         </Flow>
-        <Flow name="GET /agents/changes">
-            <Description>Fetches the changes associated with the agents</Description>
+        <Flow name="GetCompany">
+            <Description></Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/agents/changes") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies/{companyMasterId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="HealthCheck">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/health") and (request.verb = "GET")</Condition>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">
@@ -57,7 +63,7 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/v1./companyservice</BasePath>
+        <BasePath>/v1.0/companyservice</BasePath>
         <Properties/>
         <VirtualHost>realogy-secure</VirtualHost>
     </HTTPProxyConnection>
