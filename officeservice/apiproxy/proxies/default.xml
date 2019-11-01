@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <Description>MDM Office</Description>
+    <Description>MDM Office </Description>
     <FaultRules/>
     <Flows>
         <Flow name="HealthCheck">
@@ -63,7 +63,7 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/v1./officeservice</BasePath>
+        <BasePath>/v1.0/officeservice</BasePath>
         <Properties/>
         <VirtualHost>realogy-secure</VirtualHost>
     </HTTPProxyConnection>
