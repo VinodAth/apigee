@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="8" name="mls">
+    <Basepaths>/v1.0/mls</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1572631687244</CreatedAt>
+    <CreatedBy>machine@realogy-holdings-corp.com</CreatedBy>
+    <Description>MLS Listings Service</Description>
+    <DisplayName>mls</DisplayName>
+    <LastModifiedAt>1572631687244</LastModifiedAt>
+    <LastModifiedBy>machine@realogy-holdings-corp.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:5089f0168e05c0678d8fb108c83d3d30ef9d02edfab9444f48d9f3683d2712796c66e1c0b4046c9dee40d58b43abc59f27678b7675bbc8323060ef7eac76008b</ManifestVersion>
+    <Policies>
+        <Policy>FC-APIKey</Policy>
+        <Policy>FC-CommonConfig</Policy>
+        <Policy>FC-ExtractParameters</Policy>
+        <Policy>FC-JWT</Policy>
+        <Policy>FC-MessageLogger</Policy>
+        <Policy>FC-SpikeArrest</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
