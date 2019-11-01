@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <Description>ieap-property-tx-service</Description>
+    <Description>Transaction Service</Description>
     <FaultRules/>
     <Flows>
         <Flow name="GetOneUsingAddrId">
             <Description></Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/api/v1/property-addresses/{masterAddressID}/transactions") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/api/v1/property-addresses/{addresMasterId}/transactions") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="HealthCheck">
             <Description></Description>
