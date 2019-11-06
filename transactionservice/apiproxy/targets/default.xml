@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://pptx-proptx-530828824.us-west-2.elb.amazonaws.com/transactionservice</URL>
+        <URL>http://pptx-proptx-530828824.us-west-2.elb.amazonaws.com/transactionservice</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
