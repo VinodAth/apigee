@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <Description>MDM Company</Description>
+    <Description>MDM Company </Description>
     <FaultRules/>
     <Flows>
         <Flow name="GetCompanyList">
@@ -63,7 +63,7 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/v1./companyservice</BasePath>
+        <BasePath>/v1.0/companyservice</BasePath>
         <Properties/>
         <VirtualHost>realogy-secure</VirtualHost>
     </HTTPProxyConnection>
