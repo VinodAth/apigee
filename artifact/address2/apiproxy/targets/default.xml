@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="default">
+    <Description>Realogy Address API</Description>
+    <FaultRules/>
+    <Flows/>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>http://realogy-mls-address-service.eapdenonprd.realogydev.com/addressapi</URL>
+    </HTTPTargetConnection>
+</TargetEndpoint>

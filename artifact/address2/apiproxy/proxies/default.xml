@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>Realogy Address API</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="AddAddressBulkFromLegacy">
+            <Description>Use this endpoint to migrate bulk legacy address data. </Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/addressapi/bulk/legacy-address") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="AddAddress">
+            <Description>Post a free form address string to normalize and store</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/addressapi/v1/address") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="UpdateAddress">
+            <Description>Update address component of an existing address</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/addressapi/v1/address") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="ViewAddressByAddressId">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/addressapi/v1/address/address-id/{addressId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ViewAddressByLegacyAddressId">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/addressapi/v1/address/legacy-id/{legacyAddressId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ViewAddressByRealogyId">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/addressapi/v1/address/realogy-id/{realogyId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ViewAddress">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/addressapi/v1/address/{address}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ViewGeoCoordinateByAddress">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/addressapi/v1/geo-coordinate/{address}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="AddAddressFromLegacy">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/addressapi/v1/legacy-address") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="HealthCheck">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/internal/health") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-CommonConfig</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0/address</BasePath>
+        <Properties/>
+        <VirtualHost>realogy-secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
