@@ -99,7 +99,7 @@
         <Response/>
     </PreFlow>
     <HTTPProxyConnection>
-        <BasePath>/v01./address</BasePath>
+        <BasePath>/v1.0/address</BasePath>
         <Properties/>
         <VirtualHost>realogy-secure</VirtualHost>
     </HTTPProxyConnection>
