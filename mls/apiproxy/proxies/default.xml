@@ -4,88 +4,141 @@
     <FaultRules/>
     <Flows>
         <Flow name="HealthCheck">
-            <Description>Health Check MLS API's.</Description>
+            <Description>Health Check Api.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/internal/health") and (request.verb = "GET")</Condition>
         </Flow>
+        <Flow name="GetMlsListingsByAddress">
+            <Description>Experimental API (In Progress). Get Mls Listings for a given address. Currently this api returns any matching text against the street of a given address.
+By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
+Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/address/{unparsed_address}") and (request.verb = "GET")</Condition>
+        </Flow>
         <Flow name="GetMlsListingsByAgentId">
-            <Description>Get Mls Listings By AgentId.</Description>
+            <Description>Get Mls Listings for a given Mls AgentId. By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
+Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/agent/{list_agent_mls_id}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="GetMlsListingsByCity">
-            <Description>Get Mls Listings By City.</Description>
+            <Description>Get Mls Listings for a given City and State. By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
+Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/city/{city}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="GetMlsListingsByCity2">
-            <Description>Get Mls Listings By City.</Description>
+            <Description>Get Mls Listings for a given City and State. By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
+Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/city/{city}/state/{state}") and (request.verb = "GET")</Condition>
         </Flow>
+        <Flow name="GetMlsListingsByAgentGuid">
+            <Description>Get Mls Listings for a given Listing Agent Guid (DashMls). By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
+Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/dash/agent/{listing_agent_guid}") and (request.verb = "GET")</Condition>
+        </Flow>
         <Flow name="GetMlsListingByListingId">
-            <Description>Get Mls Listings by Listing Id.</Description>
+            <Description>Get Mls Listings for a given Listing Id. This API may return multiple listings for a listing id if there are multiple mls sources associated. 
+Use "source" in the request path to narrow the result to particular mls source.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/listing/{listing_id}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="GetMlsListingByListingId2">
-            <Description>Get Mls Listings by Listing Id.</Description>
+            <Description>Get Mls Listings for a given Listing Id. This API may return multiple listings for a listing id if there are multiple mls sources associated. 
+Use "source" in the request path to narrow the result to particular mls source.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/listing/{listing_id}/source/{source_system_key}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="GetMlsListingsByPostalCode">
-            <Description>Get Mls Listings By Postal Code.</Description>
+            <Description>Get Mls Listings for a given Postal Code. By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
+Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/postalcode/{postal_code}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="GetMlsListingBySource">
-            <Description>Get Mls Listings by source system key.</Description>
+            <Description>Get Mls Listings for a given mls source name. By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
+Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/source/{source_system_key}") and (request.verb = "GET")</Condition>
         </Flow>
+        <Flow name="GetMlsListingsByCompanyStaffId">
+            <Description>Get Mls Listings for a given Company Staff Id. By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
+Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/staff/{company_staff_master_id}") and (request.verb = "GET")</Condition>
+        </Flow>
         <Flow name="GetMlsListingsByState">
-            <Description>Get Mls Listings By State.</Description>
+            <Description>Get Mls Listings for a given State. By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
+Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/state/{state}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingByCity">
-            <Description>Stream Mls Listings By City.</Description>
+            <Description>Stream Mls Listings for a given City and State. This api is a streaming variation of listings by city and state. 
+Use http2 to stream the response. Default idle timeout is 120 seconds (This value be changed later)</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/city/{city}") and (request.verb = "GET")</Condition>
         </Flow>
+        <Flow name="StreamMlsListingByCity2">
+            <Description>Stream Mls Listings for a given City and State. This api is a streaming variation of listings by city and state. 
+Use http2 to stream the response. Default idle timeout is 120 seconds (This value be changed later)</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/city/{city}/state/{state}") and (request.verb = "GET")</Condition>
+        </Flow>
         <Flow name="StreamMlsListingEvent">
-            <Description>Mls Events Streaming Service.</Description>
+            <Description>Mls Events Streaming API. By default, this api streams all the events related to mls listings in real time.
+Reponse of this api encloses mls listings with addtional event meta data(eventMetaData) such as,
+  &gt; "data" - Unique id representing the event itself. This id can be used as a "resumeEventId" in case of failure.
+  &gt; "eventType" - MLS Event Type (insert, update, replace, delete)
+Use "source_system_key" in the query param to receive events related to a specific mls source.
+Use "resume_event_id" is the query param to resume events from a particular point in time. This is usefull in case of failure to start resuming the events.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/event") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingByPostalCode">
-            <Description>Stream Mls Listings By Postal Code.</Description>
+            <Description>Stream Mls Listings for a given Postal Code. This api is a streaming variation of listings by postal code. 
+Use http2 to stream the response. Default idle timeout is 120 seconds (This value be changed later)</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/postalcode/{postal_code}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingBySource">
-            <Description>Stream Mls Listings by Source System Key.</Description>
+            <Description>Stream Mls Listings for a given mls source name. This api is a streaming variation of listings by source. 
+Use http2 to stream the response. Default idle timeout is 120 seconds (This value be changed later)</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/source/{source_system_key}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingByState">
-            <Description>Stream Mls Listings By State.</Description>
+            <Description>Stream Mls Listings for a given State.  This api is a streaming variation of listings by state. 
+Use http2 to stream the response. Default idle timeout is 120 seconds (This value be changed later)</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/state/{state}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingsBySubdivision">
+            <Description>Get Mls Listings for a given Subdivision. By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
+Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/subdivision/{subdivision_name}") and (request.verb = "GET")</Condition>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">
