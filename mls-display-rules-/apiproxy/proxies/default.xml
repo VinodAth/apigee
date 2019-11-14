@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>MLS Display Rules API</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="HealthCheck">
+            <Description>Health Check MLS Display Rules API.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/internal/health") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsDisplayRules">
+            <Description>Get all the mls display rules. Pagination is supported through offset and limit parameters.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/displayrules") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsDisplayRulesBySource">
+            <Description>Get Mls Display Rules for a given mls source.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/displayrules/source/{source_system_key}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="StreamMlsDisplayRules">
+            <Description>Stream mls display rules</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/displayrules") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="StreamMlsDisplayRulesEvent">
+            <Description>Stream mls display rules events.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/displayrules/event") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-CommonConfig</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1./mls-display-rules-</BasePath>
+        <Properties/>
+        <VirtualHost>realogy-secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
