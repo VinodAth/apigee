@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="default">
+    <Description>MLS Display Rules API</Description>
+    <FaultRules/>
+    <Flows/>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>http://realogy-mls-display-rules.eapdenonprd.realogydev.com/mls-display-rules-api</URL>
+    </HTTPTargetConnection>
+</TargetEndpoint>
