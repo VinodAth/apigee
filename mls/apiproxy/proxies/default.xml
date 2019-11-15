@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <Description>MLS Listings Service</Description>
+    <Description>MLS Listings Service </Description>
     <FaultRules/>
     <Flows>
         <Flow name="HealthCheck">
@@ -24,6 +24,17 @@ Offset is the point at which the mls listings should be returned and limit is th
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/agent/{list_agent_mls_id}") and (request.verb = "GET")</Condition>
         </Flow>
+        <Flow name="StreamMlsListingEvent">
+            <Description>Mls Events Streaming API. By default, this api streams all the events related to mls listings in real time.
+Reponse of this api encloses mls listings with addtional event meta data(eventMetaData) such as,
+  &gt; "data" - Unique id representing the event itself. This id can be used as a "marker" in case of failure.
+  &gt; "eventType" - MLS Event Type (insert, update, replace, delete)
+Use "source_system_key" in the query param to receive events related to a specific mls source.
+Use "resume_event_id" is the query param to resume events from a particular point in time. This is usefull in case of failure to start resuming the events.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/changes") and (request.verb = "GET")</Condition>
+        </Flow>
         <Flow name="GetMlsListingsByCity">
             <Description>Get Mls Listings for a given City and State. By default this api returns maximum of 20 listings. Use "offset &amp; limit" in the request as query parameter to return more listings.
 Offset is the point at which the mls listings should be returned and limit is the size of the mls listings to be returned.</Description>
@@ -44,6 +55,20 @@ Offset is the point at which the mls listings should be returned and limit is th
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/dash/agent/{listing_agent_guid}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingByListingGuid">
+            <Description>Get Mls Listings for a given Listing Guid (Dash). This API may return multiple listings for a listing id if there are multiple mls sources associated. 
+Use "source" in the request path to narrow the result to particular mls source.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/dash/listing/{listing_guid}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GetMlsListingByListingGuid2">
+            <Description>Get Mls Listings for a given Listing Guid (Dash). This API may return multiple listings for a listing id if there are multiple mls sources associated. 
+Use "source" in the request path to narrow the result to particular mls source.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mls/dash/listing/{listing_guid}/source/{source_system_key}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="GetMlsListingByListingId">
             <Description>Get Mls Listings for a given Listing Id. This API may return multiple listings for a listing id if there are multiple mls sources associated. 
@@ -100,17 +125,6 @@ Use http2 to stream the response. Default idle timeout is 120 seconds (This valu
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/city/{city}/state/{state}") and (request.verb = "GET")</Condition>
-        </Flow>
-        <Flow name="StreamMlsListingEvent">
-            <Description>Mls Events Streaming API. By default, this api streams all the events related to mls listings in real time.
-Reponse of this api encloses mls listings with addtional event meta data(eventMetaData) such as,
-  &gt; "data" - Unique id representing the event itself. This id can be used as a "resumeEventId" in case of failure.
-  &gt; "eventType" - MLS Event Type (insert, update, replace, delete)
-Use "source_system_key" in the query param to receive events related to a specific mls source.
-Use "resume_event_id" is the query param to resume events from a particular point in time. This is usefull in case of failure to start resuming the events.</Description>
-            <Request/>
-            <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/event") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingByPostalCode">
             <Description>Stream Mls Listings for a given Postal Code. This api is a streaming variation of listings by postal code. 
