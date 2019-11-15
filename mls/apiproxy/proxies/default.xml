@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <Description>MLS Listings Service </Description>
+    <Description>MLS Listings Service</Description>
     <FaultRules/>
     <Flows>
         <Flow name="HealthCheck">
@@ -26,11 +26,11 @@ Offset is the point at which the mls listings should be returned and limit is th
         </Flow>
         <Flow name="StreamMlsListingEvent">
             <Description>Mls Events Streaming API. By default, this api streams all the events related to mls listings in real time.
-Reponse of this api encloses mls listings with addtional event meta data(eventMetaData) such as,
-  &gt; "data" - Unique id representing the event itself. This id can be used as a "marker" in case of failure.
-  &gt; "eventType" - MLS Event Type (insert, update, replace, delete)
-Use "source_system_key" in the query param to receive events related to a specific mls source.
-Use "resume_event_id" is the query param to resume events from a particular point in time. This is usefull in case of failure to start resuming the events.</Description>
+Reponse of this api encloses mls listings with event meta data(mlsChange) with attributes,
+1. "marker" - Unique id for an event. This id can be used as query param in the request(?marker=&lt;marker id of previous successfull change&gt;) to resume the changes in case of failure,
+2. "changeType" - MLS Change Type (insert, update, replace, delete),
+3. "changeTime" - MLS Change Time.
+Default idle timeout is 120 seconds.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/changes") and (request.verb = "GET")</Condition>
@@ -114,35 +114,35 @@ Offset is the point at which the mls listings should be returned and limit is th
         </Flow>
         <Flow name="StreamMlsListingByCity">
             <Description>Stream Mls Listings for a given City and State. This api is a streaming variation of listings by city and state. 
-Use http2 to stream the response. Default idle timeout is 120 seconds (This value be changed later)</Description>
+Use http2 to stream the response. Default idle timeout is 120 seconds</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/city/{city}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingByCity2">
             <Description>Stream Mls Listings for a given City and State. This api is a streaming variation of listings by city and state. 
-Use http2 to stream the response. Default idle timeout is 120 seconds (This value be changed later)</Description>
+Use http2 to stream the response. Default idle timeout is 120 seconds</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/city/{city}/state/{state}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingByPostalCode">
             <Description>Stream Mls Listings for a given Postal Code. This api is a streaming variation of listings by postal code. 
-Use http2 to stream the response. Default idle timeout is 120 seconds (This value be changed later)</Description>
+Use http2 to stream the response. Default idle timeout is 120 seconds.</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/postalcode/{postal_code}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingBySource">
             <Description>Stream Mls Listings for a given mls source name. This api is a streaming variation of listings by source. 
-Use http2 to stream the response. Default idle timeout is 120 seconds (This value be changed later)</Description>
+Use http2 to stream the response. Default idle timeout is 120 seconds</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/source/{source_system_key}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="StreamMlsListingByState">
             <Description>Stream Mls Listings for a given State.  This api is a streaming variation of listings by state. 
-Use http2 to stream the response. Default idle timeout is 120 seconds (This value be changed later)</Description>
+Use http2 to stream the response. Default idle timeout is 120 seconds</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/mls/stream/state/{state}") and (request.verb = "GET")</Condition>
