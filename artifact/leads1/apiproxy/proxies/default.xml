@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>leads</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="getcareerleadbyid">
+            <Description>GetCareerLeadById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/career/{Id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="postcareerlead">
+            <Description>PostCareerLead</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/career") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getfranchiseleadbyid">
+            <Description>GetFranchiseLeadById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/franchise/{Id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="postfranchiselead">
+            <Description>PostFranchiseLead</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/franchise") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getofficeleadbyid">
+            <Description>GetOfficeLeadById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/Office/{Id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="postofficelead">
+            <Description>PostOfficeLead</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/Office") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getpropertyleadbyid">
+            <Description>GetPropertyLeadById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/property/{Id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="postpropertylead">
+            <Description>PostPropertyLead</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/property") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getagentleadbyid">
+            <Description>GetAgentLeadById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/agent/{Id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="postagentlead">
+            <Description>PostAgentLead</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/agent") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getteamleadbyid">
+            <Description>GetTeamLeadById</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/team/{Id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="postteamlead">
+            <Description>PostTeamLead</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/leads/team") and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-CommonConfig</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0/leads</BasePath>
+        <Properties/>
+        <VirtualHost>realogy-secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
