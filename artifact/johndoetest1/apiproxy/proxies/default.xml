@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>Dash API V1</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="Batches_Post">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/batches") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Batches_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/batches/{batchId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="BuyerSellerTransactions_Search">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/buyersellertransactions") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="BuyerSellerTransactions_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/buyersellertransactions/{guid}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CodeValues_Search">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/codevalues") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CodeValues_SearchFeatures">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/codevalues/features") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CodeValues_SearchPropertyStyles">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/codevalues/propertystyles") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CommercialLeaseListings_GetConsumer">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/consumer/listings/commercialleases/{listingGuid}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CommercialSaleListings_GetConsumer">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/consumer/listings/commercialsales/{listingGuid}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CommercialSaleListings_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/commercialsales/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CommercialSaleListings_Put">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/commercialsales/{id}") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="CommercialSaleListings_Post">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/commercialsales") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Companies_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Companies_Delta">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companies/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CompanyStaff_GetConsumer">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/consumer/companystaff/{companyStaffGuid}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CompanyStaff_Put">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companystaff/{id}") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="CompanyStaff_Post">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companystaff") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="CompanyStaff_PatchMedia">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companystaff/{id}/media") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="CompanyStaff_Delta">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companystaff/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CompanyStaff_SearchAgent">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companystaff/agents") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CompanyStaff_PatchDesignation">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companystaff/{companyStaffGuid}/designation") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="CompanyStaff_PatchProfiles">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companystaff/{id}/profiles") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="CompanyStaff_SearchByOffice">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companystaff/byoffice") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CompanyStaff_SearchByCompany">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/companystaff/bycompany") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CorporateStaff_Delta">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/corporatestaff/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CorporateStaff_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/corporatestaff/{corporateStaffGuid}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Listings_SearchByCompany">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/bycompany") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Listings_SearchByOffice">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/byoffice") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Listings_SearchByTeam">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/byteam") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Listings_SearchByAgent">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/byagent") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Listings_Delta">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Listings_PatchMedia">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/{id}/media") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="Listings_DeleteMedia">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/{id}/media/{mediaProviderIdentifier}") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="Listings_PatchListingIsOffMarket">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/{id}/listingisoffmarket") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="Listings_PatchListingLandingPageURL">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/{id}/listinglandingpageurl") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="Offices_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices/{officeGuid}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Offices_Delta">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Offices_PatchDesignation">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices/{officeGuid}/designation") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="Offices_PatchProfiles">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices/{officeGuid}/profiles") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="Offices_Search">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Offices_PatchOfficeMedia">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices/{id}/media") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="Offices_PatchLogo">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/offices/{id}/officelogomedia") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="OtherIncomeTransactions_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/otherincomes/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="OtherIncomeTransactions_Put">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/otherincomes/{id}") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="OtherIncomeTransactions_Post">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/otherincomes") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="ResidentialRentalListings_GetConsumer">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/consumer/listings/residentialrentals/{listingGuid}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ResidentialSaleListings_GetConsumer">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/consumer/listings/residentialsales/{listingGuid}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ResidentialSaleListings_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/residentialsales/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ResidentialSaleListings_Put">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/residentialsales/{id}") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="ResidentialSaleListings_Post">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/listings/residentialsales") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="ResidentialSaleNewDevelopment_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/newdevelopments/residentialsales/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ResidentialSaleNewDevelopment_Delta">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/newdevelopments/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="SaleTransactions_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/sales/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="SaleTransactions_Put">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/sales/{id}") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="SaleTransactions_Post">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/sales") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Teams_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/teams/{id}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Teams_Delta">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/teams/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Teams_SearchByCompany">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/teams/bycompany") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Teams_Search">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/teams") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Transactions_Search">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Transactions_SearchByOffice">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/byoffice") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Transactions_SearchByCompany">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/bycompany") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Transactions_Delta">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/transactions/delta") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Users_Get">
+            <Description></Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/{personGuid}") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>FC-MessageLogger</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>FC-ExtractParameters</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-CommonConfig</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-SpikeArrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-APIKey</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>FC-JWT</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0/johndoetest</BasePath>
+        <Properties/>
+        <VirtualHost>realogy-secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
