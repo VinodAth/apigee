@@ -13,6 +13,6 @@
     </PreFlow>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>http://qa-realogy-mls-listings-service-1161963145.us-west-2.elb.amazonaws.com/mls</URL>
+        <URL>http://realogy-mls-listings-service.eapdesb2.realogydev.com/mls</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
